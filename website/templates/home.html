@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
-<h1>Thank God!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+
+    {% if user.is_authenticated %}
+    <h1>Hello world</h1>
+    {% else %}
+
+    <h2>Login</h2>
+<br>
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Username</label>
+    <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+  </div>
+
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+{% endif %}
+</div>
+
+{% endblock %}
