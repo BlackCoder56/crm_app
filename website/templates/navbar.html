@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">Django CRM App</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,9 @@
           <a class="nav-link" href="{% url 'logout' %}">Logout</a>
         </li>
         {% else %}
+           <li class="nav-item">
+             <a class="nav-link" href="{% url 'register' %}"><strong>Register</strong></a>
+          </li>
           <li class="nav-item">
           <a class="nav-link" href="{% url 'home' %}">Login</a>
         </li>
