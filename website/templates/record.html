@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Customer</h1>
+<div class="card ">
+  <div class="card-header text-bg-success">
+      <strong>{{ customer_record.id }}. {{ customer_record.first_name }} {{ customer_record.last_name }}</strong>
+  </div>
+  <div class="card-body">
+
+      <table class="table table-bordered border-success table-hover table-success">
+
+          <tbody>
+
+            <tr>
+              <th scope="row">Email</th>
+              <td colspan="2" class="">{{ customer_record.email }}</td>
+                </tr>
+            <tr>
+                <th scope="row">Phone</th>
+              <td colspan="2" class="">{{ customer_record.phone }}</td>
+                </tr>
+                <tr>
+                <th scope="row">Address</th>
+              <td colspan="2" class="">{{ customer_record.address }}</td>
+                    </tr>
+                <tr>
+                <th scope="row">City</th>
+              <td colspan="2" class="">{{ customer_record.city }}</td>
+                    </tr>
+                <tr>
+                <th scope="row">State</th>
+              <td colspan="2" class="">{{ customer_record.state }}</td>
+            </tr>
+          <tr>
+                <th scope="row">Zipcode</th>
+              <td colspan="2" class="">{{ customer_record.zipcode }}</td>
+            </tr>
+          </tbody>
+</table>
+
+  </div>
+
+</div>
+<br>
+<a href="{% url 'home' %}" class="btn btn-success">Back</a>
+
+{% endblock %}
